@@ -49,7 +49,12 @@ ENV/
 #   - .env.template is explicitly allowed (contains placeholders only)
 #   - All credential patterns below are excluded from git
 #
-# ⚠️  IMPORTANT: Review this section before committing to ensure no credentials leak!
+# ⚠️  IMPORTANT: 
+#   - Review this section before committing to ensure no credentials leak!
+#   - .gitignore CANNOT scan file contents - always manually check for exposed keys
+#   - Use "git diff" before committing to review changes
+#   - Never commit files with actual API keys, even in documentation
+#   - If a key is exposed, remove it and amend the commit before pushing
 
 # Environment files with actual credentials
 .env

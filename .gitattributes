@@ -1,0 +1,10 @@
+# Git attributes for YSRN project
+
+# Mark files that should be checked for secrets
+*.md filter=check-secrets
+*.py filter=check-secrets
+*.txt filter=check-secrets
+*.json filter=check-secrets
+*.yaml filter=check-secrets
+*.yml filter=check-secrets
+
