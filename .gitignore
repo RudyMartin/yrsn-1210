@@ -1,0 +1,132 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# Credentials Exclude - NEVER COMMIT FILES WITH REAL CREDENTIALS
+# ============================================================================
+# These files contain sensitive information and must NEVER be committed to git.
+# Always use .env.template as a starting point, then rename to .env and fill in values.
+#
+# 📚 Documentation:
+#   - See CREDENTIALS_SETUP.md for complete setup instructions
+#   - See README_CREDENTIALS.md for quick start guide
+#   - Template file: .env.template (safe to commit, contains placeholders only)
+#
+# 🔐 Security:
+#   - .env file is ignored (contains real credentials)
+#   - .env.template is explicitly allowed (contains placeholders only)
+#   - All credential patterns below are excluded from git
+#
+# ⚠️  IMPORTANT: Review this section before committing to ensure no credentials leak!
+
+# Environment files with actual credentials
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+.env.development
+.env.test
+
+# API Keys and Secrets
+*.key
+*.pem
+*.secret
+secrets.json
+credentials.json
+api_keys.txt
+
+# Configuration files with embedded credentials
+config.local.json
+config.production.json
+config.staging.json
+settings.local.py
+
+# Database credentials
+*.db
+*.sqlite
+*.sqlite3
+database.ini
+
+# SSH Keys
+id_rsa
+id_ed25519
+*.pem
+*.ppk
+
+# Certificate files
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# Token files
+*.token
+tokens.txt
+
+# Test data
+test_data/
+test_chroma/
+chroma_db/
+data/
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+chroma_db/
+test_data/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Explicitly allow .env.template (it's safe to commit - contains placeholders only)
+# This allows the template to be committed so team members can copy it
+!.env.template
+
+# ============================================================================
+# End of Credentials Exclude Section
+# ============================================================================
+# For setup instructions, see: CREDENTIALS_SETUP.md
+# For quick reference, see: README_CREDENTIALS.md

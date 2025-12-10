@@ -1,0 +1,3 @@
+"""Secondary adapters - Driven implementations."""
+
+

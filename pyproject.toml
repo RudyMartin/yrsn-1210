@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ysrn"
+version = "0.1.0"
+description = "YSRN (Y=R+S+N) Application using Hexagonal Architecture"
+readme = "YSRN_Gap_Analysis_Hexagonal_Architecture.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Next Shift Consulting LLC"}
+]
+license = {text = "MIT"}
+
+dependencies = [
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "mypy>=1.5.0",
+    "ruff>=0.1.0",
+]
+api = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+]
+embeddings = [
+    "openai>=1.0.0",
+    "sentence-transformers>=2.2.0",
+]
+vectordb = [
+    "chromadb>=0.4.0",
+]
+observability = [
+    "prometheus-client>=0.19.0",
+    "opentelemetry-api>=1.21.0",
+    "opentelemetry-sdk>=1.21.0",
+]
+
+[tool.setuptools]
+packages = ["ysrn"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+markers = [
+    "unit: Unit tests using mocks",
+    "integration: Integration tests using real services",
+    "e2e: End-to-end tests",
+    "slow: Slow tests that should be skipped in CI",
+    "requires_api: Tests requiring external API (OpenAI, etc.)",
+    "requires_db: Tests requiring database",
+]
+
