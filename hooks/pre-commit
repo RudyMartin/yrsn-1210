@@ -33,7 +33,7 @@ for file in $FILES; do
     
     # Check each pattern
     for pattern in "${PATTERNS[@]}"; do
-        if git diff --cached "$file" | grep -qiE "$pattern"; then
+        if git diff --cached "$file" | grep -qiE -e "$pattern"; then
             echo -e "${RED}⚠️  WARNING: Potential secret found in $file${NC}"
             echo -e "${YELLOW}   Pattern: $pattern${NC}"
             FOUND_SECRETS=1
